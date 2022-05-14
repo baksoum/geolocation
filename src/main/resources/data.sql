@@ -1,7 +1,5 @@
 INSERT INTO USER (id, confirmation_token, username, enabled, first_name, last_name, gender, password, authority, lastseen)
 VALUES
-
-soumare bakari ajout
 (3, 'AAAAAAA', 'student@utrains.test', 1, 'student', 'Utrains student', 'Male', 'school1', 'ROLE_ADMIN', '05/01/2022'),
 (4, 'BBBBBBB', 'root@utrains.test', 1, 'root','Utrains ROOT','Female', 'root_pass', 'ROLE_USER', '05/01/2022'),
 (5, 'CCCCCCC', 'mekano@utrains.test', 1, 'Mekano','hermann','Male', 'mekano_pass', 'ROLE_DOCTOR', '05/01/2022'),
