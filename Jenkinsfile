@@ -8,10 +8,9 @@ pipeline{
             steps{
                 sh 'mvn clean install package'
             }
-            stage('soumare'){
+           
             steps{
                 echo 'Bonjour pipeline'
-             }
             }
         }
     }
