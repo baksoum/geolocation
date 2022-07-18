@@ -17,7 +17,9 @@ pipeline{
        
         stage('upload artifact'){
             steps{
-                sh ''nexusArtifactUploader artifacts: [[artifactId: "${POM_ARTIFACTID}",
+                script{
+                def mavenPom = readMavenPom file: 'pom.xml'
+                nexusArtifactUploader artifacts: [[artifactId: "${POM_ARTIFACTID}",
                  classifier: '',
                   file: "target/${POM_ARTIFACTID}-${POM_VERSION}.${POM_PACKAGING}",
                    type: "${POM_PACKAGING}"]],
@@ -27,7 +29,8 @@ pipeline{
                        nexusVersion: 'nexus3',
                         protocol: 'http',
                          repository: 'bio-medical-app',
-                          version: "${POM_VERSION}"''
+                          version: "${POM_VERSION}"
+                }
             }
                 
         }
