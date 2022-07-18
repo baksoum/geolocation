@@ -17,7 +17,7 @@ pipeline{
        
         stage('upload artifact'){
             steps{
-                sscript{ nexusArtifactUploader artifacts: [[artifactId: "${POM_ARTIFACTID}",
+                script{ nexusArtifactUploader artifacts: [[artifactId: "${POM_ARTIFACTID}",
                  classifier: '',
                   file: "target/${POM_ARTIFACTID}-${POM_VERSION}.${POM_PACKAGING}",
                    type: "${POM_PACKAGING}"]],
