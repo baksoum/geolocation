@@ -8,10 +8,6 @@ pipeline{
             steps{
                 sh 'mvn clean install package'
             }
-           
-            steps{
-                echo 'Bonjour pipeline'
-            }
         }
     }
 }
