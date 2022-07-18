@@ -17,7 +17,18 @@ pipeline{
        
         stage('upload artifact'){
             steps{
-                sh (nexusArtifactUploader artifacts: [[artifactId: '${POM_ARTIFACTID}', classifier: '', file: 'target/${POM_ARTIFACTID}-${POM_VERSION}.${POM_PACKAGING}', type: '${POM_PACKAGING}']], credentialsId: 'NexusID', groupId: '${POM_GROUPID}', nexusUrl: '170.187.193.86:8081', nexusVersion: 'nexus3', protocol: 'http', repository: 'bio-medical-app', version: '${POM_VERSION}')
+                sscript{ nexusArtifactUploader artifacts: [[artifactId: "${POM_ARTIFACTID}",
+                 classifier: '',
+                  file: "target/${POM_ARTIFACTID}-${POM_VERSION}.${POM_PACKAGING}",
+                   type: "${POM_PACKAGING}"]],
+                    credentialsId: 'NexusID',
+                     groupId: "${POM_GROUPID}",
+                      nexusUrl: '170.187.193.86:8081',
+                       nexusVersion: 'nexus3',
+                        protocol: 'http',
+                         repository: 'bio-medical-app',
+                          version: "${POM_VERSION}"
+                }
             }
         }
     }
