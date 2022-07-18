@@ -10,11 +10,4 @@ pipeline{
             }
         }
     }
-    stages{
-        stage('soumare'){
-            steps{
-                echo 'Hello world!'
-            }
-        }
-    }
 }
