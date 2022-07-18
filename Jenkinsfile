@@ -19,5 +19,10 @@ pipeline{
                 sh 'ls'
             }
         }
+        stage('cat Jenkinsfile |grep stage'){
+            steps{
+                sh 'ls'
+            }
+        }
     }
 }
