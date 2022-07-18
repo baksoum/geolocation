@@ -11,6 +11,7 @@ pipeline{
             stage('soumare'){
             steps{
                 echo 'Bonjour pipeline'
+             }
             }
         }
     }
