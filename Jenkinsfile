@@ -16,7 +16,8 @@ pipeline{
         }
        
         stage('upload artifact'){
-           sh ''nexusArtifactUploader artifacts: [[artifactId: "${POM_ARTIFACTID}",
+            steps{
+                sh ''nexusArtifactUploader artifacts: [[artifactId: "${POM_ARTIFACTID}",
                  classifier: '',
                   file: "target/${POM_ARTIFACTID}-${POM_VERSION}.${POM_PACKAGING}",
                    type: "${POM_PACKAGING}"]],
@@ -27,7 +28,8 @@ pipeline{
                         protocol: 'http',
                          repository: 'bio-medical-app',
                           version: "${POM_VERSION}"''
-                
             }
+                
         }
+    }
 }
