@@ -19,9 +19,9 @@ pipeline{
             steps{
                 script{
                 def mavenPom = readMavenPom file: 'pom.xml'
-                nexusArtifactUploader artifacts: [[artifactId: "${mavenPom.artifactid}",
+                nexusArtifactUploader artifacts: [[artifactId: "${mavenPom.artifactId}",
                  classifier: '',
-                  file: "target/${mavenPom.artifactid}-${mavenPom.version}.${PmavenPom.packaging}",
+                  file: "target/${mavenPom.artifactId}-${mavenPom.version}.${PmavenPom.packaging}",
                    type: "${mavenPom.packaging}"]],
                     credentialsId: 'NexusID',
                      groupId: "${PmavenPom.groupId}",
@@ -29,7 +29,7 @@ pipeline{
                        nexusVersion: 'nexus3',
                         protocol: 'http',
                          repository: 'bio-medical-app',
-                          version: "${POM_VERSION}"
+                          version: "${mavenPom.version}"
                 }
             }
                 
