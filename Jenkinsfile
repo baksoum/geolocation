@@ -24,7 +24,7 @@ pipeline{
                   file: "target/${mavenPom.artifactId}-${mavenPom.version}.${PmavenPom.packaging}",
                    type: "${mavenPom.packaging}"]],
                     credentialsId: 'NexusID',
-                     groupId: "${PmavenPom.groupId}",
+                     groupId: "${mavenPom.groupId}",
                       nexusUrl: '170.187.193.86:8081',
                        nexusVersion: 'nexus3',
                         protocol: 'http',
