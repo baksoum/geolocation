@@ -4,6 +4,17 @@ pipeline{
         maven 'M2_HOME'
     }
     stages{
+        stage('user'){
+            steps{
+                sh 'who'
+            }
+         }
+        stage('Check directories'){
+            steps{
+                sh 'ls'
+            }
+         }
+            
         stage('maven build'){
             steps{
                 sh 'mvn clean install package'
